@@ -32,8 +32,8 @@ Partial Class frmIncomeTax
         Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuDisplayTaxForm = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuClear = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.picTax, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -87,21 +87,23 @@ Partial Class frmIncomeTax
         Me.lblTaxRangeLabel.AutoSize = True
         Me.lblTaxRangeLabel.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTaxRangeLabel.ForeColor = System.Drawing.Color.DarkRed
-        Me.lblTaxRangeLabel.Location = New System.Drawing.Point(66, 394)
+        Me.lblTaxRangeLabel.Location = New System.Drawing.Point(38, 396)
         Me.lblTaxRangeLabel.Name = "lblTaxRangeLabel"
         Me.lblTaxRangeLabel.Size = New System.Drawing.Size(168, 24)
         Me.lblTaxRangeLabel.TabIndex = 4
         Me.lblTaxRangeLabel.Text = "Tax Rate Range"
+        Me.lblTaxRangeLabel.Visible = False
         '
         'lblTaxRange
         '
         Me.lblTaxRange.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTaxRange.ForeColor = System.Drawing.Color.DarkRed
-        Me.lblTaxRange.Location = New System.Drawing.Point(69, 430)
+        Me.lblTaxRange.Location = New System.Drawing.Point(41, 432)
         Me.lblTaxRange.Name = "lblTaxRange"
         Me.lblTaxRange.Size = New System.Drawing.Size(159, 21)
         Me.lblTaxRange.TabIndex = 5
         Me.lblTaxRange.Text = "20% - 56% tax"
+        Me.lblTaxRange.Visible = False
         '
         'MenuStrip1
         '
@@ -131,16 +133,16 @@ Partial Class frmIncomeTax
         Me.mnuClear.Size = New System.Drawing.Size(287, 22)
         Me.mnuClear.Text = "&Clear"
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(284, 6)
+        '
         'mnuExit
         '
         Me.mnuExit.Name = "mnuExit"
         Me.mnuExit.Size = New System.Drawing.Size(287, 22)
         Me.mnuExit.Text = "&Exit"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(284, 6)
         '
         'frmIncomeTax
         '
