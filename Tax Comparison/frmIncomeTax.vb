@@ -13,7 +13,7 @@ Option Strict On
 Public Class frmIncomeTax
 
     ' Tax ranges file
-    Const cstrTaxRangesPath = "D:\tax.txt"
+    Private m_strTaxRangesPath As String = "E:\tax.txt"
 
     ' shared tax ranges
     Public Shared m_objTaxRanges As List(Of TaxRange)
@@ -26,29 +26,54 @@ Public Class frmIncomeTax
         ' clear Tax Range listview
         lstCountries.Items.Clear()
 
-        If LoadTaxRangesFromText(cstrTaxRangesPath) Then
+        If IsFileExistOrBrowseForFile() Then
+
+            LoadTaxRangesFromText()
 
             For Each tax In m_objTaxRanges
                 lstCountries.Items.Add(tax)
             Next
 
+        Else
+            ' Disable menu items
+            mnuClear.Enabled = False
+            mnuDisplayTaxForm.Enabled = False
+            btnDisplayTaxRange.Enabled = False
         End If
 
     End Sub
 
-    Function LoadTaxRangesFromText(strPath As String) As Boolean
+    Function IsFileExistOrBrowseForFile() As Boolean
+        ' This procedure check tax.txt file exisitng
+        ' If it is not, open a dialog for user to browse for file
+
+        If Not IO.File.Exists(m_strTaxRangesPath) Then
+            MsgBox("The file is not available. Locate tax.txt file.",
+                   MsgBoxStyle.Exclamation, "Error")
+
+            Using openFile = New OpenFileDialog()
+                ' https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.openfiledialog?view=netframework-4.7.1
+                openFile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"
+                openFile.FilterIndex = 1
+                openFile.ShowDialog()
+                m_strTaxRangesPath = openFile.FileName
+            End Using
+
+            ' final check for file existing
+            Return IO.File.Exists(m_strTaxRangesPath)
+        End If
+
+        Return True
+
+    End Function
+
+    Function LoadTaxRangesFromText() As Boolean
         ' Open the given text file and load Tax Ranges into memory
         ' return True if file exist and read successfully
 
-        ' if file does not exist, terminate the procedure
-        If Not IO.File.Exists(strPath) Then
-            MsgBox("The file is not available. Restart when the file is available.",
-                   MsgBoxStyle.Critical, "Error")
-            Return False
-        End If
+        Dim strPath = m_strTaxRangesPath
 
         ' Declare variables that use for reading text file
-        Dim intCount As Integer = 0
         Dim objTaxRange As TaxRange
 
         ' initialize tax range array
@@ -66,8 +91,6 @@ Public Class frmIncomeTax
                 ' add to list
                 Console.WriteLine("Added " & objTaxRange.DebugInfo())
                 m_objTaxRanges.Add(objTaxRange)
-
-                intCount += 1
             Loop
 
         End Using
