@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmTaxRates
+Partial Class frmDisplayTaxRates
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -34,6 +34,7 @@ Partial Class frmTaxRates
         '
         Me.lsvTaxRates.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colCountries, Me.colTaxRates})
         Me.lsvTaxRates.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lsvTaxRates.FullRowSelect = True
         Me.lsvTaxRates.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
         Me.lsvTaxRates.Location = New System.Drawing.Point(84, 104)
         Me.lsvTaxRates.Name = "lsvTaxRates"
@@ -45,7 +46,7 @@ Partial Class frmTaxRates
         'colCountries
         '
         Me.colCountries.Text = "Country"
-        Me.colCountries.Width = 213
+        Me.colCountries.Width = 195
         '
         'colTaxRates
         '
@@ -75,7 +76,7 @@ Partial Class frmTaxRates
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = False
         '
-        'frmTaxRates
+        'frmDisplayTaxRates
         '
         Me.AcceptButton = Me.btnClose
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -88,7 +89,7 @@ Partial Class frmTaxRates
         Me.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Name = "frmTaxRates"
+        Me.Name = "frmDisplayTaxRates"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Tax Rates in Various Countries"
         Me.ResumeLayout(False)

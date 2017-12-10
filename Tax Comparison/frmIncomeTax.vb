@@ -70,7 +70,6 @@ Public Class frmIncomeTax
                 intCount += 1
             Loop
 
-
         End Using
 
         Return True
@@ -111,7 +110,11 @@ Public Class frmIncomeTax
 
     Private Sub mnuDisplayTaxForm_Click(sender As Object, e As EventArgs) Handles mnuDisplayTaxForm.Click
         ' The mnuDisplay click event creates an instance of the frmTaxRates
-        Using frmSecond As New frmTaxRates
+
+        ' Create Display TaxRates form
+        ' using statement handle disposing Form resource
+        Using frmSecond As New frmDisplayTaxRates()
+
             ' Hide this form 
             Hide()
 
@@ -120,5 +123,6 @@ Public Class frmIncomeTax
             frmSecond.ShowDialog()
 
         End Using
+
     End Sub
 End Class
