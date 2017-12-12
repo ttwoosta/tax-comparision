@@ -39,6 +39,7 @@ Partial Class frmDisplayTaxRates
         Me.lsvTaxRates.Location = New System.Drawing.Point(84, 104)
         Me.lsvTaxRates.Name = "lsvTaxRates"
         Me.lsvTaxRates.Size = New System.Drawing.Size(326, 246)
+        Me.lsvTaxRates.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.lsvTaxRates.TabIndex = 0
         Me.lsvTaxRates.UseCompatibleStateImageBehavior = False
         Me.lsvTaxRates.View = System.Windows.Forms.View.Details
