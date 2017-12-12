@@ -28,6 +28,7 @@ Partial Class frmDisplayTaxRates
         Me.colTaxRates = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.lblSortDesc = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lsvTaxRates
@@ -77,6 +78,15 @@ Partial Class frmDisplayTaxRates
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = False
         '
+        'lblSortDesc
+        '
+        Me.lblSortDesc.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSortDesc.Location = New System.Drawing.Point(84, 82)
+        Me.lblSortDesc.Name = "lblSortDesc"
+        Me.lblSortDesc.Size = New System.Drawing.Size(326, 16)
+        Me.lblSortDesc.TabIndex = 4
+        Me.lblSortDesc.Text = "The list sorted by Country ascending order"
+        '
         'frmDisplayTaxRates
         '
         Me.AcceptButton = Me.btnClose
@@ -84,6 +94,7 @@ Partial Class frmDisplayTaxRates
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(495, 454)
+        Me.Controls.Add(Me.lblSortDesc)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.lsvTaxRates)
@@ -103,4 +114,5 @@ Partial Class frmDisplayTaxRates
     Friend WithEvents colTaxRates As ColumnHeader
     Friend WithEvents lblTitle As Label
     Friend WithEvents btnClose As Button
+    Friend WithEvents lblSortDesc As Label
 End Class

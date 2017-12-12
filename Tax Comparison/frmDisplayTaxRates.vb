@@ -64,7 +64,29 @@ Public Class frmDisplayTaxRates
         ' Call the sort method to manually sort.
         lsvTaxRates.Sort()
 
+        ' update label
+        UpdateSortingLabelText(e.Column, lsvTaxRates.Sorting)
+
     End Sub
+
+    Private Sub UpdateSortingLabelText(column As Integer, order As SortOrder)
+        Dim strSortDesc As String = "The list sorted by "
+
+        If column = 0 Then
+            strSortDesc &= "Country"
+        Else
+            strSortDesc &= "Tax Rate"
+        End If
+
+        If order = SortOrder.Ascending Then
+            strSortDesc &= " ascending order"
+        Else
+            strSortDesc &= " decending order"
+        End If
+
+        lblSortDesc.Text = strSortDesc
+    End Sub
+
 End Class
 
 
