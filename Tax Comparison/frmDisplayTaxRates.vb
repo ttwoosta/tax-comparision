@@ -91,6 +91,7 @@ End Class
 
 
 ' Implements the manual sorting of items by column.
+' https://msdn.microsoft.com/en-us/library/ms996467.aspx
 Friend Class ListViewItemComparer
     Implements IComparer
 
