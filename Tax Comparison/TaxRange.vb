@@ -1,6 +1,8 @@
 ﻿' Class Name:   TaxRange
 ' Author:       Tu Tong
 ' Date:         December 10, 2017
+' Purpose:      Custom object for tax information
+'               the class produce objects which are sortable and comparable
 
 ' Creating Classes in Visual Basic .NET
 ' https://msdn.microsoft.com/en-us/library/ms973814.aspx

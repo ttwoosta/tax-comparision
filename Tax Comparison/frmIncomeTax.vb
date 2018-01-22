@@ -1,7 +1,7 @@
-﻿' Program Name: Perconal Income Tax Comparison by Country
+﻿' Program Name: Personal Income Tax Comparison by Country
 ' Author:       Tu Tong
 ' Date:         December 10, 2017
-' Purpose:      This Windows application opens a text file aht lists the 
+' Purpose:      This Windows application opens a text file that lists the 
 '               personal marginal income tax rate ranges for 17 countries. 
 '               The user selects a country and displays the personal income 
 '               tax rate range. A menu selection also can show the entire listing 
@@ -44,7 +44,7 @@ Public Class frmIncomeTax
     End Sub
 
     Function IsFileExistOrBrowseForFile() As Boolean
-        ' This procedure check tax.txt file exisitng
+        ' This procedure check tax.txt file existing
         ' If it is not, open a dialog for user to browse for file
 
         If Not IO.File.Exists(m_strTaxRangesPath) Then
@@ -79,6 +79,7 @@ Public Class frmIncomeTax
         ' initialize tax range array
         m_objTaxRanges = New List(Of TaxRange)
 
+        ' "Using" statement handle dispose objReader automatically
         Using objReader = IO.File.OpenText(strPath)
 
             ' Read the file line by line until the file is completed
