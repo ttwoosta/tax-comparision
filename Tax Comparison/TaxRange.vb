@@ -37,6 +37,7 @@ Public Class TaxRange
     End Function
 
     Public Overrides Function ToString() As String
+        ' Return the country name as object's name
         Return Country
     End Function
 
